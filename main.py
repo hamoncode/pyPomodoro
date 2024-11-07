@@ -9,11 +9,11 @@ print("""
     
     """)
 
-# déclarations des variables
+# déclarations du temps
 etude = int(input("vous voulez étudier pour combien de minutes?"))
 pause = int(input("combien de temps pour les pause?"))
 
-# variable affiché par l'apps
+# variables affiché par l'apps
 minuteEtude = etude - 1 # je vais jamais étudier 1 min
 seconde = 60
 minutePause = pause - 1
@@ -22,7 +22,7 @@ minutePause = pause - 1
 minutes_en_seconde_etude = etude * 60
 minutes_en_seconde_pause = pause * 60
 
-# condition de sortie
+# condition de sortie de boucle
 autrePomodoro = True
 
 # boucle de l'apps
@@ -57,4 +57,3 @@ while(autrePomodoro):
     sortie = input("Voulez-vous faire un autre pomodoro?(y/n)")
     if (sortie == 'n' or sortie == 'N'):
         autrePomodoro = False
-        
