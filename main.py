@@ -10,13 +10,9 @@ print("""
     """)
 
 # déclarations du temps
-etude = int(input("vous voulez étudier pour combien de minutes?"))
-pause = int(input("combien de temps pour les pause?"))
+etude = int(input("vous voulez étudier pour combien de minutes?\n"))
+pause = int(input("combien de temps pour les pause?\n"))
 
-# variables affiché par l'apps
-minuteEtude = etude - 1 # je vais jamais étudier 1 min
-seconde = 60
-minutePause = pause - 1
 
 # convertir minutes en seconde
 minutes_en_seconde_etude = etude * 60
@@ -28,6 +24,11 @@ autrePomodoro = True
 # boucle de l'apps
 while(autrePomodoro):
 
+    # variables affiché par l'apps
+    minuteEtude = etude - 1 # je vais jamais étudier 1 min
+    seconde = 60
+    minutePause = pause - 1
+
     # boucle d'étude
     for i in range(minutes_en_seconde_etude):
         time.sleep(1)
@@ -36,7 +37,7 @@ while(autrePomodoro):
             seconde = 60
             minuteEtude = minuteEtude - 1
         os.system('clear')
-        print(f"{minuteEtude}:{seconde} d'Études ")
+        print(f"temps d'etudes : {minuteEtude}:{seconde}")
     
     # message de pause  
     os.system('clear')
@@ -52,8 +53,8 @@ while(autrePomodoro):
             minutePause = minutePause - 1
         os.system('clear')
         print(f"{minutePause}:{seconde} de pause")
-    
+    os.system('clear') 
     # demande de sortie
-    sortie = input("Voulez-vous faire un autre pomodoro?(y/n)")
+    sortie = input("Voulez-vous faire un autre pomodoro?(y/n)\n")
     if (sortie == 'n' or sortie == 'N'):
         autrePomodoro = False
