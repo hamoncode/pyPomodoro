@@ -44,7 +44,7 @@ while(autrePomodoro):
         time.sleep(1)
         seconde = seconde - 1
         if (seconde == 0):
-            seconde = 60
+            seconde = 59
             minuteEtude = minuteEtude - 1
         os.system('clear')
         print(f"temps d'etudes : {minuteEtude}:{seconde}")
@@ -60,12 +60,13 @@ while(autrePomodoro):
         time.sleep(1)
         seconde = seconde - 1
         if (seconde == 0):
-            seconde = 60
+            seconde = 59
             minutePause = minutePause - 1
         os.system('clear')
         print(f"{minutePause}:{seconde} de pause")
     os.system('clear')
     alarme()
+    os.system('clear')
     # demande de sortie
     sortie = input("Voulez-vous faire un autre pomodoro?(y/n)\n")
     if (sortie == 'n' or sortie == 'N'):
