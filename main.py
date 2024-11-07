@@ -1,6 +1,6 @@
 import time 
 import os
-from playsound import playsound
+import pygame
 
 print("""
  ____  _  _  __  __  _____  ____  _____  ____  _____ 
@@ -12,12 +12,12 @@ print("""
 
 # fonction qui joue l'alarme
 def alarme():
-    sound = True
-    while(sound):
-        playsound('./alarmSound/mixkit-retro-game-emergency-alarm-1000.wav')
-        annulerAlarme = input("arreter l'alarme?(enter)")
-        if (annulerAlarme != '*12s343fafgc'):
-            sound = False
+    pygame.mixer.init()
+    pygame.mixer.music.load('./alarmSound/mixkit-retro-game-emergency-alarm-1000.wav')
+    pygame.mixer.music.play(-1)
+    stop = input("enter pour arreter l'alarme\n")
+    if (stop != "df34f2f3f3gsag454/bvrf"):
+       pygame.mixer.music.stop() 
 
 # déclarations du temps
 etude = int(input("vous voulez étudier pour combien de minutes?\n"))
