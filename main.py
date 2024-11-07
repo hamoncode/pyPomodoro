@@ -1,14 +1,12 @@
 import time 
 import os
 
-print("""\
-             eeeeee                                              
-eeeee e    e 8    8 eeeee eeeeeee eeeee eeeee eeeee eeeee  eeeee 
-8   8 8    8 8eeee8 8  88 8  8  8 8  88 8   8 8  88 8   8  8  88 
-8eee8 8eeee8 88     8   8 8e 8  8 8   8 8e  8 8   8 8eee8e 8   8 
-88      88   88     8   8 88 8  8 8   8 88  8 8   8 88   8 8   8 
-88      88   88     8eee8 88 8  8 8eee8 88ee8 8eee8 88   8 8eee8 
-
+print("""
+ ____  _  _  __  __  _____  ____  _____  ____  _____ 
+(  _ \\( \\/ )(  \\/  )(  _  )(  _ \\(  _  )(  _ \\(  _  )
+ )___/ \\  /  )    (  )(_)(  )(_) ))(_)(  )   / )(_)( 
+(__)   (__) (_/\\/\\_)(_____)(____/(_____)(_)\\_)(_____)
+    
     """)
 
 # déclarations des variables
@@ -21,8 +19,8 @@ seconde = 60
 minutePause = pause - 1
 
 # convertir minutes en seconde
-minutes_en_seconde_etude = minuteEtude * 60
-minutes_en_seconde_pause = minutePause * 60
+minutes_en_seconde_etude = etude * 60
+minutes_en_seconde_pause = pause * 60
 
 # condition de sortie
 autrePomodoro = True
@@ -39,7 +37,12 @@ while(autrePomodoro):
             minuteEtude = minuteEtude - 1
         os.system('clear')
         print(f"{minuteEtude}:{seconde} d'Études ")
+    
+    # message de pause  
+    os.system('clear')
     print(f"pause de {pause} minutes")
+    time.sleep(2)
+
     # boucle de pause
     for i in range(minutes_en_seconde_pause):
         time.sleep(1)
