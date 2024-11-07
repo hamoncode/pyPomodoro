@@ -1,5 +1,6 @@
 import time 
 import os
+from playsound import playsound
 
 print("""
  ____  _  _  __  __  _____  ____  _____  ____  _____ 
@@ -8,6 +9,15 @@ print("""
 (__)   (__) (_/\\/\\_)(_____)(____/(_____)(_)\\_)(_____)
     
     """)
+
+# fonction qui joue l'alarme
+def alarme():
+    sound = True
+    while(sound):
+        playsound('./alarmSound/mixkit-retro-game-emergency-alarm-1000.wav')
+        annulerAlarme = input("arreter l'alarme?(enter)")
+        if (annulerAlarme != '*12s343fafgc'):
+            sound = False
 
 # déclarations du temps
 etude = int(input("vous voulez étudier pour combien de minutes?\n"))
@@ -41,6 +51,7 @@ while(autrePomodoro):
     
     # message de pause  
     os.system('clear')
+    alarme()
     print(f"pause de {pause} minutes")
     time.sleep(2)
 
@@ -53,7 +64,8 @@ while(autrePomodoro):
             minutePause = minutePause - 1
         os.system('clear')
         print(f"{minutePause}:{seconde} de pause")
-    os.system('clear') 
+    os.system('clear')
+    alarme()
     # demande de sortie
     sortie = input("Voulez-vous faire un autre pomodoro?(y/n)\n")
     if (sortie == 'n' or sortie == 'N'):
