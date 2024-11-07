@@ -36,7 +36,7 @@ while(autrePomodoro):
 
     # variables affiché par l'apps
     minuteEtude = etude - 1 
-    seconde = 60
+    seconde = 59
     minutePause = pause - 1
 
     # boucle d'étude
