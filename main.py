@@ -25,7 +25,7 @@ autrePomodoro = True
 while(autrePomodoro):
 
     # variables affiché par l'apps
-    minuteEtude = etude - 1 # je vais jamais étudier 1 min
+    minuteEtude = etude - 1 
     seconde = 60
     minutePause = pause - 1
 
