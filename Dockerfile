@@ -1,7 +1,7 @@
 # image de base
 FROM python:latest
 
-# bugfix driver de son pygame
+# bugfix : driver pygame -> dummy
 ENV SDL_AUDIODRIVER=dummy
 
 # cd dans l'application
