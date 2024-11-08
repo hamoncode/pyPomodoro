@@ -6,11 +6,15 @@ from tqdm import tqdm
 
 def print_ascii_Art():
     print("""
-    ____  _  _  __  __  _____  ____  _____  ____  _____ 
-    (  _ \\( \\/ )(  \\/  )(  _  )(  _ \\(  _  )(  _ \\(  _  )
-    )___/ \\  /  )    (  )(_)(  )(_) ))(_)(  )   / )(_)( 
-    (__)   (__) (_/\\/\\_)(_____)(____/(_____)(_)\\_)(_____)
-        
+ _______           _______  _______  ______   _______  _______  _______ 
+(  ____ )|\\     /|(       )(  ___  )(  __  \\ (  ___  )(  ____ )(  ___  )
+| (    )|( \\   / )| () () || (   ) || (  \\  )| (   ) || (    )|| (   ) |
+| (____)| \\ (_) / | || || || |   | || |   ) || |   | || (____)|| |   | |
+|  _____)  \\   /  | |(_)| || |   | || |   | || |   | ||     __)| |   | |
+| (         ) (   | |   | || |   | || |   ) || |   | || (\\ (   | |   | |
+| )         | |   | )   ( || (___) || (__/  )| (___) || ) \\ \\__| (___) |
+|/          \\_/   |/     \\|(_______)(______/ (_______)|/   \\__/(_______)
+                                                                        
         """)
 
 """
@@ -32,13 +36,16 @@ def alarme():
 # affiche l'alarme 
 def alarmeAffiché():
     clear()
+    print_ascii_Art()
     print('temps écoulé')
     alarme()
     clear()
 
-# fonction d'un timer
+# fonction d'un timer avec progress bar
 def timer(secondesTotale,seconde,minutes):
+    print_ascii_Art()
     pbar = tqdm(total=secondesTotale, bar_format='{l_bar}{bar}|')
+    pbar.write(f"temps d'etudes : {minutes}:{seconde}")
     for i in range(secondesTotale):
         time.sleep(1)
         seconde = seconde - 1
@@ -46,8 +53,9 @@ def timer(secondesTotale,seconde,minutes):
             seconde = 60
             minutes = minutes - 1
         clear()
-        pbar.update(1)
         # print avec pbar: fix race condition
+        print_ascii_Art()
         pbar.write(f"temps d'etudes : {minutes}:{seconde}")
+        pbar.update(1)
     pbar.close()
 
