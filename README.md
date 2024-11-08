@@ -12,6 +12,10 @@ main apps: python3 main.py
 
 fonctions utilisés dans main.py
 
+#### packages python utilisés
+alarme = pygame
+progressbar = tqdm
+
 ### Dockerfile
 
 attempt de runner l'application dans un docker container
