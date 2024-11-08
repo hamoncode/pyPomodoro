@@ -12,6 +12,13 @@ def print_ascii_Art():
         
         """)
 
+"""
+clear screen
+choisi ainsi au lieu de os a cause plus consistent avec les dockers containers
+"""
+def clear():
+    print("\033[2J\033[H", end="")
+    
 # fonction qui joue l'alarme
 def alarme():
     pygame.mixer.init()
@@ -21,10 +28,12 @@ def alarme():
     if (stop != "df34f2f3f3gsag454/bvrf"):
        pygame.mixer.music.stop()
 
+# affiche l'alarme 
 def alarmeAffiché():
-    os.system('clear')
+    clear()
+    print('temps écoulé')
     alarme()
-    os.system('clear')
+    clear()
 
 # fonction d'un timer
 def timer(secondesTotale,seconde,minutes):
@@ -34,6 +43,6 @@ def timer(secondesTotale,seconde,minutes):
         if (seconde == 0):
             seconde = 60
             minutes = minutes - 1
-        os.system('clear')
+        clear()
         print(f"temps d'etudes : {minutes}:{seconde}")
 
