@@ -2,6 +2,7 @@
 import time 
 import os
 import pygame
+from tqdm import tqdm
 
 def print_ascii_Art():
     print("""
@@ -37,6 +38,7 @@ def alarmeAffiché():
 
 # fonction d'un timer
 def timer(secondesTotale,seconde,minutes):
+    pbar = tqdm(total=secondesTotale, bar_format='{l_bar}{bar}|')
     for i in range(secondesTotale):
         time.sleep(1)
         seconde = seconde - 1
@@ -44,5 +46,8 @@ def timer(secondesTotale,seconde,minutes):
             seconde = 60
             minutes = minutes - 1
         clear()
-        print(f"temps d'etudes : {minutes}:{seconde}")
+        pbar.update(1)
+        # print avec pbar: fix race condition
+        pbar.write(f"temps d'etudes : {minutes}:{seconde}")
+    pbar.close()
 
