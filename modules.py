@@ -21,8 +21,10 @@ def print_ascii_Art():
 clear screen
 choisi ainsi au lieu de os a cause plus consistent avec les dockers containers
 """
+
 def clear():
     print("\033[2J\033[H", end="")
+    print_ascii_Art()
     
 # fonction qui joue l'alarme
 def alarme():
@@ -36,14 +38,12 @@ def alarme():
 # affiche l'alarme 
 def alarmeAffiché():
     clear()
-    print_ascii_Art()
     print('temps écoulé')
     alarme()
     clear()
 
 # fonction d'un timer avec progress bar
 def timer(secondesTotale,seconde,minutes):
-    print_ascii_Art()
     pbar = tqdm(total=secondesTotale, bar_format='{l_bar}{bar}|')
     pbar.write(f"temps d'etudes : {minutes}:{seconde}")
     for i in range(secondesTotale):
@@ -54,7 +54,6 @@ def timer(secondesTotale,seconde,minutes):
             minutes = minutes - 1
         clear()
         # print avec pbar: fix race condition
-        print_ascii_Art()
         pbar.write(f"temps d'etudes : {minutes}:{seconde}")
         pbar.update(1)
     pbar.close()

@@ -7,8 +7,6 @@ def main():
 
     # ascii art début de jeux
     clear() # clear message de pygames
-    print_ascii_Art()
-
     # déclarations du temps
     etude = int(input("vous voulez étudier pour combien de minutes?\n"))
     pause = int(input("combien de temps pour les pauses?\n"))
@@ -29,7 +27,6 @@ def main():
         timer(seconde_totale_etude,seconde,minuteEtude)  
         # message de pause  
         alarmeAffiché()
-        print_ascii_Art()
         print(f"pause de {pause} minutes")
         time.sleep(2)
 
@@ -38,7 +35,6 @@ def main():
         
         # message de sortie
         alarmeAffiché()
-        print_ascii_Art()
         sortie = input("Voulez-vous faire un autre pomodoro?(y/n)\n")
         if (sortie == 'n' or sortie == 'N'):
             break
