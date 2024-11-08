@@ -14,15 +14,24 @@ print("""
 def alarme():
     pygame.mixer.init()
     pygame.mixer.music.load('./alarmSound/mixkit-retro-game-emergency-alarm-1000.wav')
-    pygame.mixer.music.play(-1)
+    pygame.mixer.music.play(-1) # -1 joue la chanson en boucle
     stop = input("enter pour arreter l'alarme\n")
     if (stop != "df34f2f3f3gsag454/bvrf"):
        pygame.mixer.music.stop() 
 
+def timer(secondesTotale,seconde,minutes):
+    for i in range(secondesTotale):
+        time.sleep(1)
+        seconde = seconde - 1
+        if (seconde == 0):
+            seconde = 60
+            minutes = minutes - 1
+        os.system('clear')
+        print(f"temps d'etudes : {minutes}:{seconde}")
+
 # déclarations du temps
 etude = int(input("vous voulez étudier pour combien de minutes?\n"))
 pause = int(input("combien de temps pour les pause?\n"))
-
 
 # convertir minutes en seconde
 minutes_en_seconde_etude = etude * 60
@@ -36,37 +45,27 @@ while(autrePomodoro):
 
     # variables affiché par l'apps
     minuteEtude = etude - 1 
-    seconde = 59
+    seconde = 60
     minutePause = pause - 1
 
     # boucle d'étude
-    for i in range(minutes_en_seconde_etude):
-        time.sleep(1)
-        seconde = seconde - 1
-        if (seconde == 0):
-            seconde = 59
-            minuteEtude = minuteEtude - 1
-        os.system('clear')
-        print(f"temps d'etudes : {minuteEtude}:{seconde}")
+    timer(minutes_en_seconde_etude,seconde,minuteEtude) 
     
     # message de pause  
     os.system('clear')
     alarme()
+    os.system('clear')
     print(f"pause de {pause} minutes")
     time.sleep(2)
 
     # boucle de pause
-    for i in range(minutes_en_seconde_pause):
-        time.sleep(1)
-        seconde = seconde - 1
-        if (seconde == 0):
-            seconde = 59
-            minutePause = minutePause - 1
-        os.system('clear')
-        print(f"{minutePause}:{seconde} de pause")
+    timer(minutes_en_seconde_pause,seconde,minutePause)
+    
+    # alarme 
     os.system('clear')
     alarme()
     os.system('clear')
+    
     # demande de sortie
     sortie = input("Voulez-vous faire un autre pomodoro?(y/n)\n")
     if (sortie == 'n' or sortie == 'N'):
