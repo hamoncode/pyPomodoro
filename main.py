@@ -29,44 +29,46 @@ def timer(secondesTotale,seconde,minutes):
         os.system('clear')
         print(f"temps d'etudes : {minutes}:{seconde}")
 
-# déclarations du temps
-etude = int(input("vous voulez étudier pour combien de minutes?\n"))
-pause = int(input("combien de temps pour les pause?\n"))
+def main():
+    # déclarations du temps
+    etude = int(input("vous voulez étudier pour combien de minutes?\n"))
+    pause = int(input("combien de temps pour les pause?\n"))
 
-# convertir minutes en seconde
-minutes_en_seconde_etude = etude * 60
-minutes_en_seconde_pause = pause * 60
+    # convertir minutes en seconde
+    minutes_en_seconde_etude = etude * 60
+    minutes_en_seconde_pause = pause * 60
 
-# condition de sortie de boucle
-autrePomodoro = True
+    # condition de sortie de boucle
+    autrePomodoro = True
 
-# boucle de l'apps
-while(autrePomodoro):
+    # boucle de l'apps
+    while(autrePomodoro):
 
-    # variables affiché par l'apps
-    minuteEtude = etude - 1 
-    seconde = 60
-    minutePause = pause - 1
+        # variables affiché par l'apps
+        minuteEtude = etude - 1 
+        seconde = 60
+        minutePause = pause - 1
 
-    # boucle d'étude
-    timer(minutes_en_seconde_etude,seconde,minuteEtude) 
-    
-    # message de pause  
-    os.system('clear')
-    alarme()
-    os.system('clear')
-    print(f"pause de {pause} minutes")
-    time.sleep(2)
+        # boucle d'étude
+        timer(minutes_en_seconde_etude,seconde,minuteEtude) 
+        
+        # message de pause  
+        os.system('clear')
+        alarme()
+        os.system('clear')
+        print(f"pause de {pause} minutes")
+        time.sleep(2)
 
-    # boucle de pause
-    timer(minutes_en_seconde_pause,seconde,minutePause)
-    
-    # alarme 
-    os.system('clear')
-    alarme()
-    os.system('clear')
-    
-    # demande de sortie
-    sortie = input("Voulez-vous faire un autre pomodoro?(y/n)\n")
-    if (sortie == 'n' or sortie == 'N'):
-        autrePomodoro = False
+        # boucle de pause
+        timer(minutes_en_seconde_pause,seconde,minutePause)
+        
+        # alarme 
+        os.system('clear')
+        alarme()
+        os.system('clear')
+        
+        # demande de sortie
+        sortie = input("Voulez-vous faire un autre pomodoro?(y/n)\n")
+        if (sortie == 'n' or sortie == 'N'):
+            autrePomodoro = False
+main()
