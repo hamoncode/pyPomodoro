@@ -4,16 +4,18 @@ import pygame
 from modules import *
 
 # constante d'affichage de statut
-ETUDE="study"
-PAUSE="break"
+ETUDE="'etude"
+PAUSE="e pause"
 
 def main():
 
     # ascii art début de jeux
     clear() # clear message de pygames
-    # déclarations du temps
-    etude = int(input("vous voulez étudier pour combien de minutes?\n"))
-    pause = int(input("combien de temps pour les pauses?\n"))
+    
+    # déclaration des variables avec vérification char -> int
+    etude = is_valid_number(ETUDE)
+    pause = is_valid_number(PAUSE)
+
     clear() # clear l'affichage initiale de la barre
     # convertir minutes en seconde
     seconde_totale_etude = etude * 60

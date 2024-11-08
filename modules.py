@@ -45,7 +45,7 @@ def alarmeAffiché():
 # fonction d'un timer avec progress bar
 def timer(secondesTotale,seconde,minutes,status):
     pbar = tqdm(total=secondesTotale, bar_format='{l_bar}{bar}|')
-    pbar.write(f"     {status} time: {minutes}:{seconde}")
+    pbar.write(f"     temps d{status}: {minutes}:{seconde}")
     for i in range(secondesTotale):
         time.sleep(1)
         seconde = seconde - 1
@@ -54,7 +54,16 @@ def timer(secondesTotale,seconde,minutes,status):
             minutes = minutes - 1
         clear()
         # print avec pbar: fix race condition
-        pbar.write(f"     {status} time: {minutes}:{seconde}")
+        pbar.write(f"     temps d{status}: {minutes}:{seconde}")
         pbar.update(1)
     pbar.close()
 
+def is_valid_number(status):
+    # déclarations du temps avec vérifications
+    while(True):
+        number = input(f"veuilliez entrer le temps d{status}:\n")
+        if (not number.isnumeric()): # verifie si char number est un int
+            clear()
+            print("s'il vous plais, enter un nombre valide")
+        else: 
+            return int(number)
