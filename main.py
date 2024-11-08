@@ -3,6 +3,10 @@ import os
 import pygame
 from modules import *
 
+# constante d'affichage de statut
+ETUDE="study"
+PAUSE="break"
+
 def main():
 
     # ascii art début de jeux
@@ -24,14 +28,14 @@ def main():
         minutePause = pause - 1
 
         # boucle d'étude
-        timer(seconde_totale_etude,seconde,minuteEtude)  
+        timer(seconde_totale_etude,seconde,minuteEtude,ETUDE)  
         # message de pause  
         alarmeAffiché()
         print(f"pause de {pause} minutes")
         time.sleep(2)
 
         # boucle de pause
-        timer(seconde_totale_pause,seconde,minutePause)
+        timer(seconde_totale_pause,seconde,minutePause,PAUSE)
         
         # message de sortie
         alarmeAffiché()
