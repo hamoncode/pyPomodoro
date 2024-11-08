@@ -38,11 +38,8 @@ def main():
     seconde_totale_etude = etude * 60
     seconde_totale_pause = pause * 60
 
-    # condition de sortie de boucle
-    autrePomodoro = True
-
     # boucle de l'apps
-    while(autrePomodoro):
+    while(True):
 
         # variables affiché par l'apps
         minuteEtude = etude - 1 
@@ -70,5 +67,5 @@ def main():
         # demande de sortie
         sortie = input("Voulez-vous faire un autre pomodoro?(y/n)\n")
         if (sortie == 'n' or sortie == 'N'):
-            autrePomodoro = False
+            break
 main()
