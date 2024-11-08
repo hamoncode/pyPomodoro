@@ -18,8 +18,8 @@ attempt de runner l'application dans un docker container
 
 BUG: pas reussi a jouer le son mais le container fonctionne sans son:
 ```bash
-docker pull hamoncode/pymodoro
-docker run -it hamoncode/pymodoro
+docker pull hamoncode/pymodoro:3.0
+docker run -it hamoncode/pymodoro:3.0
 ```
 
 ### alarmSound
