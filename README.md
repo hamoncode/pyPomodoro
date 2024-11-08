@@ -13,8 +13,8 @@ main apps: python3 main.py
 fonctions utilisés dans main.py
 
 #### packages python utilisés
-alarme = pygame
-progressbar = tqdm
+- alarme = pygame
+- progressbar = tqdm
 
 ### Dockerfile
 
