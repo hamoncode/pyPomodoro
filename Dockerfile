@@ -8,7 +8,7 @@ ENV SDL_AUDIODRIVER=dummy
 WORKDIR /app
 
 # ajouter tous les fichiers de l'apps
-ADD . .
+ADD . /app
 
 # ajouter packages qu'on a besoin
 RUN pip install pygame tqdm
