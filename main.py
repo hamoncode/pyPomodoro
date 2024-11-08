@@ -35,8 +35,8 @@ def main():
     pause = int(input("combien de temps pour les pause?\n"))
 
     # convertir minutes en seconde
-    minutes_en_seconde_etude = etude * 60
-    minutes_en_seconde_pause = pause * 60
+    seconde_totale_etude = etude * 60
+    seconde_totale_pause = pause * 60
 
     # condition de sortie de boucle
     autrePomodoro = True
@@ -50,7 +50,7 @@ def main():
         minutePause = pause - 1
 
         # boucle d'étude
-        timer(minutes_en_seconde_etude,seconde,minuteEtude) 
+        timer(seconde_totale_etude,seconde,minuteEtude) 
         
         # message de pause  
         os.system('clear')
@@ -60,7 +60,7 @@ def main():
         time.sleep(2)
 
         # boucle de pause
-        timer(minutes_en_seconde_pause,seconde,minutePause)
+        timer(seconde_totale_pause,seconde,minutePause)
         
         # alarme 
         os.system('clear')
