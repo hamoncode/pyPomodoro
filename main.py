@@ -17,8 +17,14 @@ def alarme():
     pygame.mixer.music.play(-1) # -1 joue la chanson en boucle
     stop = input("enter pour arreter l'alarme\n")
     if (stop != "df34f2f3f3gsag454/bvrf"):
-       pygame.mixer.music.stop() 
+       pygame.mixer.music.stop()
 
+def alarmeAffiché():
+    os.system('clear')
+    alarme()
+    os.system('clear')
+
+# fonction d'un timer
 def timer(secondesTotale,seconde,minutes):
     for i in range(secondesTotale):
         time.sleep(1)
@@ -32,7 +38,7 @@ def timer(secondesTotale,seconde,minutes):
 def main():
     # déclarations du temps
     etude = int(input("vous voulez étudier pour combien de minutes?\n"))
-    pause = int(input("combien de temps pour les pause?\n"))
+    pause = int(input("combien de temps pour les pauses?\n"))
 
     # convertir minutes en seconde
     seconde_totale_etude = etude * 60
@@ -41,7 +47,7 @@ def main():
     # boucle de l'apps
     while(True):
 
-        # variables affiché par l'apps
+        # réinitialiser variables affichés par l'apps
         minuteEtude = etude - 1 
         seconde = 60
         minutePause = pause - 1
@@ -50,21 +56,15 @@ def main():
         timer(seconde_totale_etude,seconde,minuteEtude) 
         
         # message de pause  
-        os.system('clear')
-        alarme()
-        os.system('clear')
+        alarmeAffiché()
         print(f"pause de {pause} minutes")
         time.sleep(2)
 
         # boucle de pause
         timer(seconde_totale_pause,seconde,minutePause)
         
-        # alarme 
-        os.system('clear')
-        alarme()
-        os.system('clear')
-        
-        # demande de sortie
+        # message de sortie
+        alarmeAffiché()
         sortie = input("Voulez-vous faire un autre pomodoro?(y/n)\n")
         if (sortie == 'n' or sortie == 'N'):
             break
