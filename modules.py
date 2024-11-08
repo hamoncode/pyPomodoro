@@ -45,7 +45,7 @@ def alarmeAffiché():
 # fonction d'un timer avec progress bar
 def timer(secondesTotale,seconde,minutes,status):
     pbar = tqdm(total=secondesTotale, bar_format='{l_bar}{bar}|')
-    pbar.write(f"    |{status} time: {minutes}:{seconde}")
+    pbar.write(f"     {status} time: {minutes}:{seconde}")
     for i in range(secondesTotale):
         time.sleep(1)
         seconde = seconde - 1
@@ -54,7 +54,7 @@ def timer(secondesTotale,seconde,minutes,status):
             minutes = minutes - 1
         clear()
         # print avec pbar: fix race condition
-        pbar.write(f"    |{status} time: {minutes}:{seconde}")
+        pbar.write(f"     {status} time: {minutes}:{seconde}")
         pbar.update(1)
     pbar.close()
 
