@@ -40,7 +40,7 @@ def main():
         timer(seconde_totale_pause,seconde,minutePause,PAUSE)
         
         # message de sortie
-        alarmeAffiché()
+        clear()
         sortie = input("Voulez-vous faire un autre pomodoro?(y/n)\n")
         if ('n' in sortie or 'N' in sortie):
             message_de_fin()
