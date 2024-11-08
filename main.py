@@ -42,6 +42,7 @@ def main():
         # message de sortie
         alarmeAffiché()
         sortie = input("Voulez-vous faire un autre pomodoro?(y/n)\n")
-        if (sortie == 'n' or sortie == 'N'):
+        if ('n' in sortie or 'N' in sortie):
+            message_de_fin()
             break
 main()

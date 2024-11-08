@@ -61,9 +61,15 @@ def timer(secondesTotale,seconde,minutes,status):
 def is_valid_number(status):
     # déclarations du temps avec vérifications
     while(True):
-        number = input(f"veuilliez entrer le temps d{status}:\n")
+        number = input(f"veuliez entrez le temps d{status}:\n")
         if (not number.isnumeric()): # verifie si char number est un int
             clear()
-            print("s'il vous plais, enter un nombre valide")
+            print("veuliez renter un nombre valide")
         else: 
             return int(number)
+
+def message_de_fin():
+    print("\033[2J\033[H", end="")
+    print("merci d'avoir utilisé")
+    print_ascii_Art()
+
