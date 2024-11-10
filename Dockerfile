@@ -8,8 +8,6 @@ RUN apt-get update && \
     apt-get install -y libsdl2-mixer-dev libglib2.0-0 && \
     rm -rf /var/lib/apt/lists/*
 
-ENV SDL_AUDIODRIVER=pulse
-
 # cd dans l'application
 WORKDIR /app
 
