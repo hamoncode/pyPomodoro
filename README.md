@@ -9,23 +9,10 @@ main apps: python3 main.py
 ### modules.py
 fonctions utilisés dans main.py
 
-<<<<<<< HEAD
-=======
 #### packages python utilisés
 - alarme = pygame
 - progressbar = tqdm
 
-### Dockerfile
-
-attempt de runner l'application dans un docker container
-
-BUG: pas reussi a jouer le son mais le container fonctionne sans son:
-```bash
-docker pull hamoncode/pymodoro:3.0
-docker run -it hamoncode/pymodoro:3.0
-```
-
->>>>>>> e676f3814fce9560e54a1ac02e65c7e61ad549cf
 ### alarmSound
 document avec ficher de son d'alarme en format .wav
 
