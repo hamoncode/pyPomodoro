@@ -1,5 +1,6 @@
 # image de base
 # BUG: driver de son
+# trouver moyen de donner un output de son au lieu de se connecter absolument au sound system du host
 FROM ubuntu:24.10
 
 RUN apt-get update && \

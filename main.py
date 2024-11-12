@@ -35,6 +35,7 @@ def main():
         alarmeAffiché()
         print(f"pause de {pause} minutes")
         time.sleep(2)
+        clear()
 
         # boucle de pause
         timer(seconde_totale_pause,seconde,minutePause,PAUSE)
@@ -45,4 +46,5 @@ def main():
         if ('n' in sortie or 'N' in sortie):
             message_de_fin()
             break
+        clear()
 main()
